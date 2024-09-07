@@ -15,7 +15,13 @@
         }
 
         header {
-            background: repeating-linear-gradient(45deg, black, black 10px, white 10px, white 20px);
+            background: repeating-linear-gradient(
+                45deg,
+                black,
+                black 10px,
+                white 10px,
+                white 20px
+            );
             color: white;
             padding: 40px 20px;
             text-align: center;
@@ -115,7 +121,6 @@
             }
         }
 
-        /* Responsive design */
         @media (max-width: 768px) {
             section {
                 margin: 20px;
@@ -127,7 +132,6 @@
             }
         }
 
-        /* Gallery Styles */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -135,43 +139,45 @@
             margin: 40px 0;
         }
 
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-        }
-
         .gallery img {
             width: 100%;
             border-radius: 8px;
             cursor: pointer;
             transition: transform 0.3s ease;
+            position: relative;
         }
 
         .gallery img:hover {
             transform: scale(1.05);
         }
 
-        /* Bonus info overlay */
-        .gallery-item .bonus-info {
+        /* Hover Bonus Information */
+        .gallery a {
+            position: relative;
+        }
+
+        .gallery a::after {
+            content: attr(data-bonus-info);
             position: absolute;
-            bottom: 0;
             left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.7);
+            bottom: -10px;
+            background-color: rgba(0, 0, 0, 0.75);
             color: white;
-            font-size: 1rem;
-            padding: 10px;
-            text-align: center;
+            padding: 8px;
+            font-size: 0.8rem;
+            border-radius: 4px;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            white-space: nowrap;
             pointer-events: none;
         }
 
-        .gallery-item:hover .bonus-info {
+        .gallery a:hover::after {
             opacity: 1;
+            transform: translateY(0);
         }
 
-        /* Lightbox Styles */
         .lightbox {
             display: none;
             position: fixed;
@@ -202,7 +208,6 @@
             font-size: 2rem;
             text-decoration: none;
         }
-
     </style>
 </head>
 <body>
@@ -214,7 +219,13 @@
     <section id="about">
         <h2>About Me</h2>
         <p>
-            Hello hello - you have stumbled upon my website! This is where you'll find all of the creative goings on for The One Upstairs, more commonly known as Sam Tomlin.
+            Hello hello - you have stumbled upon my website! This is where you'll find all of the creative goings on for The One Upstairs, more commonly known as Sam Tomlin. This page will be mainly focused on photography, but it may contain other exploits if and when they happen.
+        </p>
+        <p>
+            I have travelled around Europe and these pictures document some of my travels: Italy, London, Spain & Cyprus, but hopefully many more soon! Watch this space!
+        </p>
+        <p>
+            Aside from creative things, I have just graduated from King's College London with a 2:1 in Mathematics and am now training to become a teacher.
         </p>
     </section>
 
@@ -235,7 +246,12 @@
                 <a href="#img3"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/ElaborateMan2.jpg?raw=true" alt="Elaborate Man"></a>
                 <span class="bonus-info">A candid moment from Italy.</span>
             </div>
-            <!-- Add more items as needed -->
+            <a href="#img1" data-bonus-info="Taken during a rainy day at King's College."><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Rain_On_King's.jpg?raw=true" alt="Image 1"></a>
+            <a href="#img2" data-bonus-info="An artistic moment captured in London."><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/A_Man_Of_Art.jpg?raw=true" alt="Image 2"></a>
+            <a href="#img3" data-bonus-info="Elaborate costume from a street performer in Spain."><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/ElaborateMan2.jpg?raw=true" alt="Image 3"></a>
+            <a href="#img4" data-bonus-info="The iconic Natural History Museum in London."><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/NaturalHistory.jpg?raw=true" alt="Image 4"></a>
+            <a href="#img5" data-bonus-info="A serene evening near St. Paul's Cathedral."><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/St_Pauls.jpg?raw=true" alt="Image 5"></a>
+            <a href="#img6" data-bonus-info="A refreshing day in the waters of Cyprus."><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Water_Man_Cyprus.jpg?raw=true" alt="Image 6"></a>
         </div>
     </section>
 
