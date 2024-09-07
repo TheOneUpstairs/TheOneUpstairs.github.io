@@ -15,6 +15,7 @@
         }
 
         header {
+            /* Black and white diagonal stripe pattern */
             background: repeating-linear-gradient(
                 45deg,
                 black,
@@ -51,13 +52,13 @@
         }
 
         h2 {
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: white; /* Change to white for consistency with header */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add subtle shadow for clarity */
             font-size: 1.8rem;
             margin-bottom: 15px;
-            background-color: black;
+            background-color: black; /* Black background for contrast */
             display: inline-block;
-            padding: 8px 16px;
+            padding: 8px 16px; /* Padding to create a bold subheading */
             border-radius: 4px;
         }
 
@@ -121,6 +122,7 @@
             }
         }
 
+        /* Responsive design */
         @media (max-width: 768px) {
             section {
                 margin: 20px;
@@ -132,6 +134,7 @@
             }
         }
 
+        /* Gallery Styles */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -144,40 +147,13 @@
             border-radius: 8px;
             cursor: pointer;
             transition: transform 0.3s ease;
-            position: relative;
         }
 
         .gallery img:hover {
             transform: scale(1.05);
         }
 
-        /* Hover Bonus Information */
-        .gallery a {
-            position: relative;
-        }
-
-        .gallery a::after {
-            content: attr(data-bonus-info);
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-            background-color: rgba(0, 0, 0, 0.75);
-            color: white;
-            padding: 8px;
-            font-size: 0.8rem;
-            border-radius: 4px;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            white-space: nowrap;
-            pointer-events: none;
-        }
-
-        .gallery a:hover::after {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        /* Lightbox Styles */
         .lightbox {
             display: none;
             position: fixed;
@@ -208,6 +184,7 @@
             font-size: 2rem;
             text-decoration: none;
         }
+
     </style>
 </head>
 <body>
@@ -233,26 +210,139 @@
     <section id="gallery">
         <h2>Photo Gallery</h2>
         <div class="gallery">
-            <!-- Image Thumbnails with Bonus Info -->
-            <div class="gallery-item">
-                <a href="#img1"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Rain_On_King's.jpg?raw=true" alt="Rain on King's"></a>
-                <span class="bonus-info">Captured on a rainy day at King's College, London.</span>
-            </div>
-            <div class="gallery-item">
-                <a href="#img2"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/A_Man_Of_Art.jpg?raw=true" alt="A Man of Art"></a>
-                <span class="bonus-info">A street artist in action in Spain.</span>
-            </div>
-            <div class="gallery-item">
-                <a href="#img3"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/ElaborateMan2.jpg?raw=true" alt="Elaborate Man"></a>
-                <span class="bonus-info">A candid moment from Italy.</span>
-            </div>
-            <a href="#img1" data-bonus-info="Taken during a rainy day at King's College."><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Rain_On_King's.jpg?raw=true" alt="Image 1"></a>
-            <a href="#img2" data-bonus-info="An artistic moment captured in London."><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/A_Man_Of_Art.jpg?raw=true" alt="Image 2"></a>
-            <a href="#img3" data-bonus-info="Elaborate costume from a street performer in Spain."><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/ElaborateMan2.jpg?raw=true" alt="Image 3"></a>
-            <a href="#img4" data-bonus-info="The iconic Natural History Museum in London."><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/NaturalHistory.jpg?raw=true" alt="Image 4"></a>
-            <a href="#img5" data-bonus-info="A serene evening near St. Paul's Cathedral."><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/St_Pauls.jpg?raw=true" alt="Image 5"></a>
-            <a href="#img6" data-bonus-info="A refreshing day in the waters of Cyprus."><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Water_Man_Cyprus.jpg?raw=true" alt="Image 6"></a>
+            <!-- Image Thumbnails -->
+            <a href="#img1"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Rain_On_King's.jpg?raw=true" alt="Image 1"></a>
+            <a href="#img2"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/A_Man_Of_Art.jpg?raw=true" alt="Image 2"></a>
+            <a href="#img3"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/ElaborateMan2.jpg?raw=true" alt="Image 3"></a>
+            <a href="#img4"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/NaturalHistory.jpg?raw=true" alt="Image 4"></a>
+            <a href="#img5"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/St_Pauls.jpg?raw=true" alt="Image 5"></a>
+            <a href="#img6"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Water_Man_Cyprus.jpg?raw=true" alt="Image 6"></a>
+            <a href="#img7"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/Car_Bologna.jpg?raw=true" alt="Image 7"></a>
+            <a href="#img8"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/Shop_Window.jpg?raw=true" alt="Image 8"></a>
+            <a href="#img9"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/Hotel_Bologna.jpg?raw=true" alt="Image 9"></a>
+            <a href="#img10"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/Hyde_Park.jpg?raw=true" alt="Image 10"></a>
+            <a href="#img11"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Woman_Barbican.jpg?raw=true" alt="Image 11"></a>
+            <a href="#img12"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Square_Bologna.jpg?raw=true" alt="Image 12"></a>
+            <a href="#img13"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Venice_From_Afar.jpg?raw=true" alt="Image 13"></a>
+            <a href="#img14"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Square_Barcelona.jpg?raw=true" alt="Image 14"></a>
+            <a href="#img15"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Clock_Tower.jpg?raw=true" alt="Image 15"></a>
+            <a href="#img16"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Sticks_And_Stones.jpg?raw=true" alt="Image 16"></a>
+            <a href="#img17"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Mantis.jpg?raw=true" alt="Image 17"></a>
+            <a href="#img18"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Bike_Cyprus.jpg?raw=true" alt="Image 18"></a>
+            <a href="#img19"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Wedding_Cyprus.jpg?raw=true" alt="Image 19"></a>
+            <a href="#img20"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Harpy_Houseboat.jpg?raw=true" alt="Image 20"></a>
         </div>
+        <!-- Lightbox -->
+        <div id="img1" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Rain_On_King's.jpg?raw=true" alt="Image 1">
+        </div>
+        <div id="img2" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/A_Man_Of_Art.jpg?raw=true" alt="Image 2">
+        </div>
+        <div id="img4" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/ElaborateMan2.jpg?raw=true" alt="Image 3">
+        </div>
+        <div id="img5" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/St_Pauls.jpg?raw=true" alt="Image 5">
+        </div>
+        <div id="img6" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Water_Man_Cyprus.jpg?raw=true" alt="Image 6">
+        </div>
+        <div id="img7" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/Car_Bologna.jpg?raw=true" alt="Image 7">
+        </div>
+        <div id="img8" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/Shop_Window.jpg?raw=true" alt="Image 8">
+        </div>
+        <div id="img9" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/Hotel_Bologna.jpg?raw=true" alt="Image 9">
+        </div>
+        <div id="img10" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/Hyde_Park.jpg?raw=true" alt="Image 10">
+        </div>
+        <div id="img11" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Woman_Barbican.jpg?raw=true" alt="Image 11">
+        </div>
+        <div id="img12" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Square_Bologna.jpg?raw=true" alt="Image 12">
+        </div>
+        <div id="img13" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Venice_From_Afar.jpg?raw=true" alt="Image 13">
+        </div>
+        <div id="img14" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Square_Barcelona.jpg?raw=true" alt="Image 14">
+        </div>
+        <div id="img15" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Clock_Tower.jpg?raw=true" alt="Image 15">
+        </div>
+        <div id="img16" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Sticks_And_Stones.jpg?raw=true" alt="Image 16">
+        </div>
+        <div id="img17" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Mantis.jpg?raw=true" alt="Image 17">
+        </div>
+        <div id="img18" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Bike_Cyprus.jpg?raw=true" alt="Image 18">
+        </div>
+        <div id="img19" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Wedding_Cyprus.jpg?raw=true" alt="Image 19">
+        </div>
+        <div id="img20" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Harpy_Houseboat.jpg?raw=true" alt="Image 20">
+        </div>
+        
+    </section>
+
+     <section id="projects">
+        <h2>My Projects</h2>
+        <ul>
+            <li><a href="pdfs/A Collection of Poems from a Curious Explorer.pdf" download>A Collection of Poems from a Curious Explorer</a></li>
+        </ul>
+    </section>
+    
+    <section id="instagram">
+        <h2>Follow Me on Instagram</h2>
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/C3JOfegtaqi/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+            <div style="padding:16px;">
+                <a href="https://www.instagram.com/p/C3JOfegtaqi/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
+                    <div style=" display: flex; flex-direction: row; align-items: center;">
+                        <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div>
+                        <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                            <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div>
+                            <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>
+                        </div>
+                    </div>
+                    <div style="padding: 19% 0;"></div>
+                    <div style="display:block; height:50px; margin:0 auto 12px; width:50px;">
+                        <svg width="50px" height="50px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-444.000000, -156.000000)"><g transform="translate(444.000000, 156.000000)"></g></g></g></svg>
+                    </div>
+                    <div style="padding-top: 8px;">
+                        <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 90px;"></div>
+                        <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 60px;"></div>
+                    </div>
+                </a>
+            </div>
+        </blockquote> 
+        <script async src="//www.instagram.com/embed.js"></script>
     </section>
 
     <footer>
