@@ -152,6 +152,30 @@
         .gallery img:hover {
             transform: scale(1.05);
         }
+        
+        .gallery-item {
+        position: relative;
+        cursor: pointer;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 0 0 8px 8px;
+        }
+        
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
 
         /* Lightbox Styles */
         .lightbox {
@@ -309,7 +333,23 @@
             <a href="#" class="lightbox-close">&times;</a>
             <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Harpy_Houseboat.jpg?raw=true" alt="Image 20">
         </div>
-        
+
+        <div class="gallery-item">
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Rain_On_King's.jpg?raw=true" alt="Image 1">
+            <div class="overlay">Bonus Info: This was taken at King's College London while I waited for students to turn up for tutoring. I love the texture that the rain adds.</div>
+        </div>
+        <div class="gallery-item">
+            <img srchttps://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/A_Man_Of_Art.jpg?raw=true" alt="Image 2">
+            <div class="overlay">Bonus Info: A simple little poem that featured as graffiti two doors down from my best friends house in Barcelona.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/ElaborateMan2.jpg?raw=true" alt="Image 3">
+            <div class="overlay">Bonus Info: A moody portrait of a local in Edinburgh. Absolutely love the city and can't wait to return!</div>
+        </div>
+        <!-- Add more gallery items here -->
+    </div>
+</section>
+
     </section>
 
      <section id="projects">
